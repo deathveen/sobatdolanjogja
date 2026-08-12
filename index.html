@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobat Dolan Jogja | Your Flexible Local Buddy</title>
+    <!-- Font Sesuai Guideline: Montserrat (Headline) & Inter (Body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-black: #121212;
+            --primary-white: #FFFFFF;
+            --accent-green: #2A4D3E;
+            --accent-amber: #E67E22;
+            --card-bg: #1E1E1E;
+            --text-muted: #A0A0A0;
+        }
+
+        body {
+            background-color: var(--primary-black);
+            color: var(--primary-white);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 480px;
+            width: 100%;
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
+
+        /* HEADER */
+        .header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .profile-pic {
+            width: 95px;
+            height: 95px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-amber);
+            margin-bottom: 12px;
+            background-color: var(--card-bg);
+        }
+
+        .handle {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 0 0 4px 0;
+            color: var(--text-muted);
+        }
+
+        .brand-name {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 24px;
+            margin: 0 0 8px 0;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--accent-amber);
+        }
+
+        .tagline {
+            font-size: 13px;
+            font-weight: 400;
+            font-style: italic;
+            margin: 0;
+            color: var(--primary-white);
+        }
+
+        /* SOCIAL BUTTONS (Dua Tombol: WA & IG) */
+        .social-links {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .btn-social {
+            flex: 1;
+            background-color: var(--accent-amber);
+            color: var(--primary-black);
+            text-decoration: none;
+            padding: 12px 0;
+            border-radius: 24px;
+            font-weight: 700;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-social:hover {
+            background-color: var(--primary-white);
+            transform: translateY(-2px);
+        }
+
+        /* SECTION TITLE */
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin: 32px 0 16px 0;
+            border-bottom: 1px solid var(--accent-green);
+            padding-bottom: 8px;
+            color: var(--primary-white);
+        }
+
+        /* PACKAGE CARDS */
+        .package-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .package-card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(42, 77, 62, 0.4);
+            border-radius: 12px;
+            padding: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--primary-white);
+            transition: border 0.3s ease;
+        }
+
+        .package-card:hover {
+            border: 1px solid var(--accent-amber);
+        }
+
+        .pkg-img {
+            width: 65px;
+            height: 65px;
+            border-radius: 8px;
+            object-fit: cover;
+            background-color: #2a2a2a;
+        }
+
+        .pkg-info {
+            flex: 1;
+        }
+
+        .badge {
+            background-color: var(--accent-green);
+            color: var(--primary-white);
+            font-size: 9px;
+            font-weight: 700;
+            padding: 3px 6px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            margin-bottom: 4px;
+        }
+
+        .pkg-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            margin: 0 0 2px 0;
+        }
+
+        .pkg-desc {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .pkg-price-area {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .pkg-start {
+            font-size: 9px;
+            color: var(--text-muted);
+        }
+
+        .pkg-price {
+            font-weight: 700;
+            font-size: 12px;
+            color: var(--accent-amber);
+            margin: 2px 0;
+        }
+
+        /* GALLERY (MASONRY LAYOUT) */
+        .gallery {
+            column-count: 2;
+            column-gap: 12px;
+            margin-top: 16px;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            display: block;
+            object-fit: cover;
+            background-color: #2a2a2a;
+        }
+
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 10px;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    
+    <!-- HEADER -->
+    <div class="header">
+        <!-- Gantilah path logo.png sesuai dengan lokasi file logo Sobat Dolan Jogja di laptopmu -->
+        <img src="c:\ZINDABAD\Projek sobatdolanjogja\logo hitam.png" alt="Sobat Dolan Jogja Logo" class="profile-pic" onerror="this.src='https://via.placeholder.com/150/121212/E67E22?text=SDJ+Logo'">
+        <p class="handle">@sobatdolanjogja</p>
+        <h1 class="brand-name">Sobat Dolan Jogja</h1>
+        <p class="tagline">Your Flexible Local Buddy & Documentation in Jogja</p>
+    </div>
+
+    <!-- SOCIAL BUTTONS (WhatsApp & Instagram saja) -->
+    <div class="social-links">
+        <a href="https://wa.me/6289677778898" target="_blank" class="btn-social"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="https://www.instagram.com/sobatdolanjogja.id/?hl=en" target="_blank" class="btn-social"><i class="fab fa-instagram"></i> Instagram</a>
+    </div>
+
+    <!-- SERVICES / DURASI SEWA -->
+    <h3 class="section-title">PILIHAN DURASI SEWA (ANTI-KAKU)</h3>
+    <div class="package-list">
+        
+        <!-- Paket 1 -->
+        <a href="https://wa.me/6289677778898?text=Halo%20Sobat%20Dolan,%20mau%20tanya%20Sewa%204%20Jam" class="package-card">
+            <img src="c:\ZINDABAD\Projek sobatdolanjogja\bck round gunung.jpg" alt="Short Ride" class="pkg-img" onerror="this.src='https://via.placeholder.com/100/2A4D3E/FFFFFF?text=4+Jam'">
+            <div class="pkg-info">
+                <span class="badge">SHORT RIDE</span>
+                <h4 class="pkg-title">Sewa Akamsi 4 Jam</h4>
+                <p class="pkg-desc">City Tour singkat, ngopi sore, atau night ride kuliner.</p>
+            </div>
+            <div class="pkg-price-area">
+                <span class="pkg-start">Start from</span>
+                <span class="pkg-price">Ask Us</span>
+                <i class="fas fa-chevron-right" style="font-size: 10px; margin-top: 4px; color: #E67E22;"></i>
+            </div>
+        </a>
+
+        <!-- Paket 2 -->
+        <a href="https://wa.me/6289677778898?text=Halo%20Sobat%20Dolan,%20mau%20tanya%20Sewa%208%20Jam" class="package-card">
+            <img src="c:\ZINDABAD\Projek sobatdolanjogja\IMG_20260423_063127.jpg" alt="Flexi Day" class="pkg-img" onerror="this.src='https://via.placeholder.com/100/E67E22/121212?text=8+Jam'">
+            <div class="pkg-info">
+                <span class="badge" style="background-color: #E67E22;">FLEXI-DAY • BISA SPLIT!</span>
+                <h4 class="pkg-title">Sewa Akamsi 8 Jam</h4>
+                <p class="pkg-desc">4 Jam eksplorasi siang + istirahat + 4 Jam eksplorasi malam.</p>
+            </div>
+            <div class="pkg-price-area">
+                <span class="pkg-start">Start from</span>
+                <span class="pkg-price">Ask Us</span>
+                <i class="fas fa-chevron-right" style="font-size: 10px; margin-top: 4px; color: #E67E22;"></i>
+            </div>
+        </a>
+
+        <!-- Paket 3 -->
+        <a href="https://wa.me/6289677778898?text=Halo%20Sobat%20Dolan,%20mau%20tanya%20Sewa%2012%20Jam" class="package-card">
+            <img src="c:\ZINDABAD\Projek sobatdolanjogja\IMG_20260604_075807.jpg" alt="Full Explorer" class="pkg-img" onerror="this.src='https://via.placeholder.com/100/2A4D3E/FFFFFF?text=12+Jam'">
+            <div class="pkg-info">
+                <span class="badge">FULL EXPLORER</span>
+                <h4 class="pkg-title">Sewa Akamsi 12 Jam</h4>
+                <p class="pkg-desc">Jelajah maksimal sunrise hingga dinner, ritme santai bebas request.</p>
+            </div>
+            <div class="pkg-price-area">
+                <span class="pkg-start">Start from</span>
+                <span class="pkg-price">Ask Us</span>
+                <i class="fas fa-chevron-right" style="font-size: 10px; margin-top: 4px; color: #E67E22;"></i>
+            </div>
+        </a>
+
+    </div>
+
+    <!-- GALERI DOKUMENTASI TRIP -->
+    <h3 class="section-title">GALERI KESERUAN</h3>
+    <div class="gallery">
+        <!-- Foto Dokumentasi Turing Motoran, Kuliner, & Hidden Gem -->
+        <img src="c:\ZINDABAD\Projek sobatdolanjogja\20241123_090906.jpg" alt="Turing Motoran Jogja" onerror="this.src='https://via.placeholder.com/300x400/2A4D3E/FFFFFF?text=Turing+Motor'">
+        <img src="c:\ZINDABAD\Projek sobatdolanjogja\IMG_9609.JPG.jpg" alt="Hidden Gem Jogja" onerror="this.src='https://via.placeholder.com/300x300/1E1E1E/E67E22?text=Hidden+Gem'">
+        <img src="c:\ZINDABAD\Projek sobatdolanjogja\IMG_20260416_071329.jpg" alt="Kuliner Lokal" onerror="this.src='https://via.placeholder.com/300x380/2A4D3E/FFFFFF?text=Kuliner+Lokal'">
+        <img src="c:\ZINDABAD\Projek sobatdolanjogja\IMG_20260423_200002.jpg" alt="Rute Jalan Tikus" onerror="this.src='https://via.placeholder.com/300x250/1E1E1E/E67E22?text=Jalan+Tikus'">
+        <img src="c:\ZINDABAD\Projek sobatdolanjogja\IMG_20260604_075807.jpg" alt="Dokumentasi Dolan" onerror="this.src='https://via.placeholder.com/300x420/2A4D3E/FFFFFF?text=Candid+Dolan'">
+        <img src="c:\ZINDABAD\Projek sobatdolanjogja\20250708_065015.jpg" alt="Video 360 Touring" onerror="this.src='https://via.placeholder.com/300x300/1E1E1E/E67E22?text=Dokumentasi+360'">
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <p>© 2026 Sobat Dolan Jogja - Your Flexible Local Buddy.</p>
+    </div>
+
+</div>
+
+</body>
+</html>
