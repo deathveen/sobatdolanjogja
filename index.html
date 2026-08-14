@@ -9,17 +9,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-black: #121212;
-            --primary-white: #FFFFFF;
-            --accent-green: #2A4D3E;
-            --accent-amber: #E67E22;
-            --card-bg: #1E1E1E;
-            --text-muted: #A0A0A0;
+            --bg-light: #E4ECE5;          /* Muted Sage Light (Teduh & Anti Silau) */
+            --sage-soft: #B3D4BD;         /* Soft Border & Card Secondary Accent */
+            --sage-accent: #5E8268;       /* Primary Deep Sage Green */
+            --dark-gray: #556358;         /* Muted Text */
+            --text-dark: #233027;         /* Charcoal Forest Green */
+            --card-bg: #FFFFFF;           /* Pure White Card untuk Kontras */
+            --white: #FFFFFF;
         }
 
         body {
-            background-color: var(--primary-black);
-            color: var(--primary-white);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
             font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
@@ -48,23 +49,24 @@
             height: 95px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid var(--accent-amber);
+            border: 3px solid var(--sage-accent);
             margin-bottom: 12px;
-            background-color: var(--card-bg);
+            background-color: var(--sage-soft);
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+            box-shadow: 0 4px 12px rgba(35, 48, 39, 0.08);
         }
 
         .profile-pic:hover {
             transform: scale(1.08) rotate(2deg);
-            box-shadow: 0 0 20px rgba(230, 126, 34, 0.6);
+            box-shadow: 0 0 20px rgba(94, 130, 104, 0.5);
         }
 
         .handle {
             font-family: 'Inter', sans-serif;
             font-size: 14px;
-            font-weight: 500;
+            font-weight: 600;
             margin: 0 0 4px 0;
-            color: var(--text-muted);
+            color: var(--dark-gray);
         }
 
         .brand-name {
@@ -74,15 +76,15 @@
             margin: 0 0 8px 0;
             letter-spacing: 1px;
             text-transform: uppercase;
-            color: var(--accent-amber);
+            color: var(--text-dark);
         }
 
         .tagline {
             font-size: 13px;
-            font-weight: 400;
+            font-weight: 500;
             font-style: italic;
             margin: 0;
-            color: var(--primary-white);
+            color: var(--dark-gray);
         }
 
         /* SOCIAL BUTTONS (Dua Tombol: WA & IG) */
@@ -97,8 +99,8 @@
 
         .btn-social {
             flex: 1;
-            background-color: var(--accent-amber);
-            color: var(--primary-black);
+            background-color: var(--sage-accent);
+            color: var(--white);
             text-decoration: none;
             padding: 12px 0;
             border-radius: 24px;
@@ -109,12 +111,14 @@
             justify-content: center;
             gap: 8px;
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 12px rgba(94, 130, 104, 0.25);
         }
 
         .btn-social:hover {
-            background-color: var(--primary-white);
+            background-color: var(--text-dark);
+            color: var(--white);
             transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 6px 15px rgba(230, 126, 34, 0.4);
+            box-shadow: 0 6px 15px rgba(35, 48, 39, 0.3);
         }
 
         /* SECTION TITLE */
@@ -125,9 +129,9 @@
             text-transform: uppercase;
             letter-spacing: 1.5px;
             margin: 32px 0 16px 0;
-            border-bottom: 1px solid var(--accent-green);
+            border-bottom: 2px solid var(--sage-soft);
             padding-bottom: 8px;
-            color: var(--primary-white);
+            color: var(--text-dark);
             animation: fadeInUp 0.8s ease-out 0.3s forwards;
             opacity: 0;
         }
@@ -143,24 +147,25 @@
 
         .package-card {
             background-color: var(--card-bg);
-            border: 1px solid rgba(42, 77, 62, 0.4);
+            border: 1px solid rgba(179, 212, 189, 0.6);
             border-radius: 12px;
             padding: 12px;
             display: flex;
             align-items: center;
             gap: 12px;
             text-decoration: none;
-            color: var(--primary-white);
+            color: var(--text-dark);
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
         }
 
         /* Animasi Hover Zoom pada Kartu Sewa */
         .package-card:hover {
-            border-color: var(--accent-amber);
+            border-color: var(--sage-accent);
             transform: scale(1.03) translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), 0 0 15px rgba(230, 126, 34, 0.25);
+            box-shadow: 0 8px 24px rgba(94, 130, 104, 0.2);
         }
 
         .pkg-img {
@@ -168,7 +173,7 @@
             height: 65px;
             border-radius: 8px;
             object-fit: cover;
-            background-color: #2a2a2a;
+            background-color: var(--sage-soft);
             transition: transform 0.4s ease;
         }
 
@@ -181,8 +186,8 @@
         }
 
         .badge {
-            background-color: var(--accent-green);
-            color: var(--primary-white);
+            background-color: var(--sage-accent);
+            color: var(--white);
             font-size: 9px;
             font-weight: 700;
             padding: 3px 6px;
@@ -197,11 +202,12 @@
             font-family: 'Montserrat', sans-serif;
             font-size: 14px;
             margin: 0 0 2px 0;
+            color: var(--text-dark);
         }
 
         .pkg-desc {
             font-size: 11px;
-            color: var(--text-muted);
+            color: var(--dark-gray);
             margin: 0;
             line-height: 1.4;
         }
@@ -216,18 +222,19 @@
 
         .pkg-start {
             font-size: 9px;
-            color: var(--text-muted);
+            color: var(--dark-gray);
         }
 
         .pkg-price {
             font-weight: 700;
             font-size: 12px;
-            color: var(--accent-amber);
+            color: var(--sage-accent);
             margin: 2px 0;
         }
 
         .package-card i {
             transition: transform 0.3s ease;
+            color: var(--sage-accent);
         }
 
         .package-card:hover i {
@@ -250,15 +257,16 @@
             margin-bottom: 12px;
             display: block;
             object-fit: cover;
-            background-color: #2a2a2a;
+            background-color: var(--card-bg);
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.4s ease, box-shadow 0.4s ease;
             cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
         }
 
         .gallery img:hover {
             transform: scale(1.06);
-            filter: brightness(1.1);
-            box-shadow: 0 0 20px rgba(230, 126, 34, 0.5), 0 8px 15px rgba(0, 0, 0, 0.5);
+            filter: brightness(1.03);
+            box-shadow: 0 0 20px rgba(94, 130, 104, 0.4), 0 8px 18px rgba(0, 0, 0, 0.1);
             position: relative;
             z-index: 2;
         }
@@ -268,7 +276,7 @@
             text-align: center;
             margin-top: 40px;
             font-size: 10px;
-            color: var(--text-muted);
+            color: var(--dark-gray);
             animation: fadeIn 0.8s ease-out 0.6s forwards;
             opacity: 0;
         }
@@ -301,7 +309,7 @@
     
     <!-- HEADER -->
     <div class="header">
-        <img src="assets/logo hitam.png" alt="Sobat Dolan Jogja Logo" class="profile-pic" onerror="this.src='https://via.placeholder.com/150/121212/E67E22?text=SDJ+Logo'">
+        <img src="assets/logo hitam.png" alt="Sobat Dolan Jogja Logo" class="profile-pic" onerror="this.src='https://via.placeholder.com/150/B3D4BD/233027?text=SDJ+Logo'">
         <p class="handle">@sobatdolanjogja</p>
         <h1 class="brand-name">Sobat Dolan Jogja</h1>
         <p class="tagline">Your Flexible Local Buddy & Documentation in Jogja</p>
@@ -321,7 +329,7 @@
         
         <!-- Paket 1: 4 Jam -->
         <a href="https://wa.me/6289677778898?text=Halo%20Sobat%20Dolan,%20mau%20tanya%20Temenin%204%20Jam%20aja%20bisa?%20Hehehehe" class="package-card" target="_blank">
-            <img src="assets/bck round gunung.jpg" alt="Short Ride" class="pkg-img" onerror="this.src='https://via.placeholder.com/100/2A4D3E/FFFFFF?text=4+Jam'">
+            <img src="assets/bck round gunung.jpg" alt="Short Ride" class="pkg-img" onerror="this.src='https://via.placeholder.com/100/B3D4BD/233027?text=4+Jam'">
             <div class="pkg-info">
                 <span class="badge">SHORT RIDE</span>
                 <h4 class="pkg-title">Ditemenin Akamsi 4 Jam</h4>
@@ -330,28 +338,28 @@
             <div class="pkg-price-area">
                 <span class="pkg-start">Start from</span>
                 <span class="pkg-price">Ask Us</span>
-                <i class="fas fa-chevron-right" style="font-size: 10px; margin-top: 4px; color: #E67E22;"></i>
+                <i class="fas fa-chevron-right" style="font-size: 10px; margin-top: 4px;"></i>
             </div>
         </a>
 
         <!-- Paket 2: 8 Jam -->
         <a href="https://wa.me/6289677778898?text=Hai%20Sobat%20Dolan,%20Kalau%20di%20temenin%208%20Jam%20bisa%20kemana%20aja?%20%F0%9F%98%81" class="package-card" target="_blank">
-            <img src="assets/IMG_20260423_063127.jpg" alt="Flexi Day" class="pkg-img" onerror="this.src='https://via.placeholder.com/100/E67E22/121212?text=8+Jam'">
+            <img src="assets/IMG_20260423_063127.jpg" alt="Flexi Day" class="pkg-img" onerror="this.src='https://via.placeholder.com/100/5E8268/FFFFFF?text=8+Jam'">
             <div class="pkg-info">
-                <span class="badge" style="background-color: #E67E22;">FLEXI-DAY • BISA SPLIT!</span>
+                <span class="badge" style="background-color: var(--text-dark);">FLEXI-DAY • BISA SPLIT!</span>
                 <h4 class="pkg-title">Ditemenin Akamsi 8 Jam</h4>
                 <p class="pkg-desc">4 Jam eksplorasi siang + istirahat + 4 Jam eksplorasi malam.</p>
             </div>
             <div class="pkg-price-area">
                 <span class="pkg-start">Start from</span>
                 <span class="pkg-price">Ask Us</span>
-                <i class="fas fa-chevron-right" style="font-size: 10px; margin-top: 4px; color: #E67E22;"></i>
+                <i class="fas fa-chevron-right" style="font-size: 10px; margin-top: 4px;"></i>
             </div>
         </a>
 
         <!-- Paket 3: 12 Jam -->
         <a href="https://wa.me/6289677778898?text=Hai%20Sobat%20Dolan,%2012%20jam%20sosmed%20dan%20kenangan%20saya%20kenyang%20berapa%20hari?%20Wkwkwkwwk" class="package-card" target="_blank">
-            <img src="assets/IMG_20260604_075807.jpg" alt="Full Explorer" class="pkg-img" onerror="this.src='https://via.placeholder.com/100/2A4D3E/FFFFFF?text=12+Jam'">
+            <img src="assets/IMG_20260604_075807.jpg" alt="Full Explorer" class="pkg-img" onerror="this.src='https://via.placeholder.com/100/B3D4BD/233027?text=12+Jam'">
             <div class="pkg-info">
                 <span class="badge">FULL EXPLORER</span>
                 <h4 class="pkg-title">Ditemenin Akamsi 12 Jam</h4>
@@ -360,7 +368,7 @@
             <div class="pkg-price-area">
                 <span class="pkg-start">Start from</span>
                 <span class="pkg-price">Ask Us</span>
-                <i class="fas fa-chevron-right" style="font-size: 10px; margin-top: 4px; color: #E67E22;"></i>
+                <i class="fas fa-chevron-right" style="font-size: 10px; margin-top: 4px;"></i>
             </div>
         </a>
 
@@ -370,14 +378,14 @@
     <h3 class="section-title">GALERI KESERUAN</h3>
     <div class="gallery">
         <!-- Foto Dokumentasi Turing Motoran, Kuliner, & Hidden Gem -->
-        <img src="assets/bck round gunung.jpg" alt="Turing Motoran Jogja" onerror="this.src='https://via.placeholder.com/300x400/2A4D3E/FFFFFF?text=Turing+Motor'">
-        <img src="assets/IMG_9609.JPG.jpg" alt="Hidden Gem Jogja" onerror="this.src='https://via.placeholder.com/300x300/1E1E1E/E67E22?text=Hidden+Gem'">
-        <img src="assets/20251018_071055.jpg" alt="Kuliner Lokal" onerror="this.src='https://via.placeholder.com/300x380/2A4D3E/FFFFFF?text=Kuliner+Lokal'">
-        <img src="assets/IMG_20260423_200002.jpg" alt="Rute Jalan Tikus" onerror="this.src='https://via.placeholder.com/300x250/1E1E1E/E67E22?text=Jalan+Tikus'">
-        <img src="assets/IMG_20260701_071044.jpg" alt="Dokumentasi Dolan" onerror="this.src='https://via.placeholder.com/300x420/2A4D3E/FFFFFF?text=Candid+Dolan'">
-        <img src="assets/20250708_065015.jpg" alt="Video 360 Touring" onerror="this.src='https://via.placeholder.com/300x300/1E1E1E/E67E22?text=Dokumentasi+360'">
-        <img src="assets/IMG_20260702_080602 (1).jpg" alt="Video 360 Touring" onerror="this.src='https://via.placeholder.com/300x300/1E1E1E/E67E22?text=Dokumentasi+360'">
-        <img src="assets/IMG_20260422_092620.jpg" alt="Video 360 Touring" onerror="this.src='https://via.placeholder.com/300x300/1E1E1E/E67E22?text=Dokumentasi+360'">
+        <img src="assets/bck round gunung.jpg" alt="Turing Motoran Jogja" onerror="this.src='https://via.placeholder.com/300x400/B3D4BD/233027?text=Turing+Motor'">
+        <img src="assets/IMG_9609.JPG.jpg" alt="Hidden Gem Jogja" onerror="this.src='https://via.placeholder.com/300x300/5E8268/FFFFFF?text=Hidden+Gem'">
+        <img src="assets/20251018_071055.jpg" alt="Kuliner Lokal" onerror="this.src='https://via.placeholder.com/300x380/B3D4BD/233027?text=Kuliner+Lokal'">
+        <img src="assets/IMG_20260423_200002.jpg" alt="Rute Jalan Tikus" onerror="this.src='https://via.placeholder.com/300x250/5E8268/FFFFFF?text=Jalan+Tikus'">
+        <img src="assets/IMG_20260701_071044.jpg" alt="Dokumentasi Dolan" onerror="this.src='https://via.placeholder.com/300x420/B3D4BD/233027?text=Candid+Dolan'">
+        <img src="assets/20250708_065015.jpg" alt="Video 360 Touring" onerror="this.src='https://via.placeholder.com/300x300/5E8268/FFFFFF?text=Dokumentasi+360'">
+        <img src="assets/IMG_20260702_080602 (1).jpg" alt="Video 360 Touring" onerror="this.src='https://via.placeholder.com/300x300/B3D4BD/233027?text=Dokumentasi+360'">
+        <img src="assets/IMG_20260422_092620.jpg" alt="Video 360 Touring" onerror="this.src='https://via.placeholder.com/300x300/5E8268/FFFFFF?text=Dokumentasi+360'">
     </div>
 
     <!-- FOOTER -->
